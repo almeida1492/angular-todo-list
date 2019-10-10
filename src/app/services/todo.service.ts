@@ -23,7 +23,12 @@ export class TodoService {
 	}
 
 	toggleCompleted(todo:Todo):Observable<any> {
-		const url = `${this.todosUrl}/${todo.id}`
+		const url = `${this.todosUrl}/${todo.id}`;
 		return this.http.put<Todo>(url, todo, httpOptions);
+	}
+
+	deleteTodo(todo:Todo):Observable<Todo>{
+		const url = `${this.todosUrl}/${todo.id}`;
+		return this.http.delete<Todo>(url, httpOptions);
 	}
 }
