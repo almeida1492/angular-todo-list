@@ -22,4 +22,14 @@ export class TodoItemComponent implements OnInit {
 		}
 		return classes;
 	}
+
+	//toggle completion status
+	onToggle(todo) {
+		todo.completed = !todo.completed;
+	}
+
+	//delete TodoItem
+	onDelete(todo) {
+
+	}
 }
